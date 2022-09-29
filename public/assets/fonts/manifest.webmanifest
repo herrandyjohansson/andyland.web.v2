@@ -1,0 +1,12 @@
+{
+    "theme_color": "#f69435",
+    "background_color": "#f69435",
+    "display": "browser",
+    "scope": "/",
+    "start_url": "/",
+    "name": "AndyLand Recipe",
+    "short_name": "AJ Recipe",
+    "icons": {
+        "name": "aperture.svg"
+    }
+}

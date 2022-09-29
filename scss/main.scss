@@ -1,0 +1,300 @@
+// Import Bootstrap
+// @import "../../node_modules/bootstrap/scss/functions";
+// @import "../../node_modules/bootstrap/scss/variables";
+// @import "../../node_modules/bootstrap/scss/mixins";
+@import "../scss/components/wowmap";
+@import "../scss/components/lab";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+$andyland-100: #fff;
+$andyland-sofia-color: #dabfde;
+$andyland-sofia-color-light: #ffcccc;
+
+body {
+  background-color: rgb(77, 77, 77);
+}
+
+.andyland-100 {
+  background-color: $andyland-100;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 2.5;
+  letter-spacing: 0.7px;
+
+  color: #fff;
+}
+
+#theme-dashboard {
+  background-color: #fff;
+  color: rgb(77, 77, 77);
+}
+
+[aria-current="page"] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 5rem;
+  font-size: 1.5rem;
+}
+
+/* sidebar */
+.sidebar {
+  height: 100vh - 8vh;
+  font-size: 3rem;
+  width: 20rem;
+  position: absolute;
+  z-index: 1337;
+  background-color: rgb(77, 77, 77);
+  transform: translateX(-100%);
+  transition: all 0.3s ease-in-out;
+
+  &.active {
+    transform: translateX(0);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.menu-closed {
+  transition: all 0.1s ease-in;
+  transform: translateX(0%);
+}
+.menu-open {
+  transition: all 0.6s ease-in-out;
+  transform: translateX(-200%);
+  animation: fadeOut ease 0.6s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.sidebar-header {
+  padding: 2rem;
+}
+
+ul {
+  color: #fff;
+
+  .nav-item {
+    padding: 1rem;
+
+    a {
+      color: #fff;
+      padding: 0.2rem;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #fff;
+        color: rgb(77, 77, 77);
+      }
+    }
+  }
+}
+
+.slide-in {
+  animation: slide-in 0.5s forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.rotate {
+  animation: rotation 0.4s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* recipe-generator */
+.recipe-generator {
+  letter-spacing: 6pt;
+
+  .text-bigger {
+    font-size: 1.3rem;
+    padding-right: 0.5rem;
+  }
+  .sofia {
+    color: $andyland-sofia-color;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.btn-andyland {
+  border: 7px dotted $andyland-sofia-color-light;
+  background-color: rgb(77, 77, 77);
+  color: white;
+  padding: 0.5rem 1rem;
+  background-color: $andyland-sofia-color;
+  &:hover {
+    animation: slide-out 1s forwards;
+  }
+}
+
+/**
+ * ==============================================
+ * Dot Pulse
+ * ==============================================
+ */
+.dot-pulse {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  box-shadow: 9999px 0 0 -5px #9880ff;
+  animation: dotPulse 1.5s infinite linear;
+  animation-delay: 0.25s;
+}
+
+.dot-pulse::before,
+.dot-pulse::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+}
+
+.dot-pulse::before {
+  box-shadow: 9984px 0 0 -5px #9880ff;
+  animation: dotPulseBefore 1.5s infinite linear;
+  animation-delay: 0s;
+}
+
+.dot-pulse::after {
+  box-shadow: 10014px 0 0 -5px #9880ff;
+  animation: dotPulseAfter 1.5s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes dotPulseBefore {
+  0% {
+    box-shadow: 9984px 0 0 -5px #9880ff;
+  }
+  30% {
+    box-shadow: 9984px 0 0 2px #9880ff;
+  }
+  60%,
+  100% {
+    box-shadow: 9984px 0 0 -5px #9880ff;
+  }
+}
+
+@keyframes dotPulse {
+  0% {
+    box-shadow: 9999px 0 0 -5px #9880ff;
+  }
+  30% {
+    box-shadow: 9999px 0 0 2px #9880ff;
+  }
+  60%,
+  100% {
+    box-shadow: 9999px 0 0 -5px #9880ff;
+  }
+}
+
+@keyframes dotPulseAfter {
+  0% {
+    box-shadow: 10014px 0 0 -5px #9880ff;
+  }
+  30% {
+    box-shadow: 10014px 0 0 2px #9880ff;
+  }
+  60%,
+  100% {
+    box-shadow: 10014px 0 0 -5px #9880ff;
+  }
+}
+
+@keyframes swing {
+  15% {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  30% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  50% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+  65% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+  }
+  80% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.resturant-oslo {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(77, 77, 77);
+}
+
+.line-height-2 {
+  line-height: 2rem;
+}
+
+/* 
+Cards 
+*/
+
+.card-text-quote {
+  font-size: 1.4rem;
+}
+.update-counter {
+  font-size: 0.6rem;
+  font-weight: bolder;
+  margin: 0;
+  height: 1rem;
+}

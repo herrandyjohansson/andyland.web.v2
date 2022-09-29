@@ -1,0 +1,252 @@
+.wow-weather-map {
+  height: 100vh;
+  background-image: url("../../public/assets/img/wow-sweden-map.webp");
+  background-position-y: -11rem;
+  background-position-x: -1.5rem;
+  font-size: 2rem;
+  font-family: "Indie Flower", cursive !important;
+
+  .celsius {
+    font-size: 0.7rem;
+  }
+}
+
+#galdhopiggen {
+  position: absolute;
+  bottom: 0;
+  left: 22%;
+  top: 45%;
+  font-size: 1.3rem;
+}
+
+#kiruna {
+  position: absolute;
+  bottom: 0;
+  left: 85%;
+  top: 3%;
+  font-size: 1.3rem;
+}
+
+#stockholm {
+  position: absolute;
+  bottom: 0;
+  left: 80%;
+  top: 75%;
+  font-size: 1.7rem;
+}
+#linkoping {
+  position: absolute;
+  bottom: 0;
+  left: 55%;
+  top: 85%;
+  font-size: 1.7rem;
+}
+#malmo {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  top: 101%;
+  font-size: 1.3rem;
+}
+.malmo-windspeed {
+  position: absolute;
+  bottom: 0;
+  left: -90%;
+  top: 110%;
+  font-size: 1rem;
+}
+
+#oslo {
+  position: absolute;
+  bottom: 0;
+  left: 28%;
+  top: 64%;
+  font-size: 1.7rem;
+}
+
+.oslo-windspeed {
+  font-size: 1.3rem;
+  position: absolute;
+  bottom: 0;
+  left: -76%;
+  top: 10%;
+}
+
+.oslo-water-temperature {
+  position: absolute;
+  bottom: 0;
+  left: 35%;
+  top: 71.5%;
+  font-size: 1.2rem;
+}
+
+.wind-options {
+  position: absolute;
+  bottom: 0;
+  left: 9%;
+  top: 12%;
+  font-size: 3rem;
+}
+.loader {
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  position: absolute;
+  color: white;
+  bottom: 0;
+  left: 30%;
+  top: 25%;
+  z-index: 2;
+  font-size: 3rem;
+}
+
+@-ms-keyframes spin {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.windspeed-animation {
+  -webkit-animation: fadeInFromNone 0.9s ease-out;
+  -moz-animation: fadeInFromNone 0.9s ease-out;
+  -o-animation: fadeInFromNone 0.9s ease-out;
+  animation: fadeInFromNone 0.9s ease-out;
+}
+
+@-webkit-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* Colors */
+
+.windSpeedDanger {
+  background-color: #ff3d00;
+}
+
+.windSpeedItsOk {
+  background-color: #b1e5f2;
+}
+
+.windSpeedEasy {
+  background-color: #fbfbfb;
+}
+.windSpeedMedium {
+  background-color: #ee8e9a;
+}
+
+.warmer {
+  background-color: #f0ad4e;
+}
+
+.warm {
+  background-color: #7cae74;
+}
+
+.mediumMedium {
+  background-color: #33a1fd;
+}
+
+.medium {
+  background-color: #fff;
+  color: #000;
+}
+.cold {
+  background-color: #fff;
+  color: #000;
+}
+.colder {
+  background-color: #808385;
+}
