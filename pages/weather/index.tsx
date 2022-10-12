@@ -5,14 +5,21 @@ import axios from "axios";
 
 // https://andyland-api.azurewebsites.net/api/Weather/weatherLocationsList
 const WeatherMap = () => {
-  const { data, isSuccess } = useQuery(["joke"], async () => {
-    const { data } = await axios(
-      "https://andyland-api.azurewebsites.net/api/Weather/weatherLocationsList"
-    );
-    return data;
-  });
+  const { data, isSuccess } = useQuery(
+    ["joke"],
+    async () => {
+      const { data } = await axios(
+        "https://andyland-api.azurewebsites.net/api/Weather/weatherLocationsList"
+      );
+      return data;
+    },
+    {
+      refetchInterval: 1000 * 60 * 60,
+    }
+  );
 
   console.log(data);
+  console.log("weather update");
 
   return (
     <div>
